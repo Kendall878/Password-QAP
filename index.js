@@ -8,7 +8,7 @@ const MAX_LENGTH = 25; // sets the maximum password length
 
 
 args.forEach(arg => {
-    if (arg.startsWith('length=')) { // Check if length is used, and if its proper.
+    if (arg.startsWith('--length=')) { // Check if length is used, and if its proper.
         const value = arg.split('=')[1];
         if (!isNaN(value) && value > 0) {
             const parsedLength = parseInt(value, 10);
@@ -23,7 +23,7 @@ args.forEach(arg => {
         }
     }
     
-    if (arg.startsWith('symbols=')) {
+    if (arg.startsWith('--symbols=')) {
         const value = arg.split('=')[1].toLowerCase();
         if (value === 'true') {
             includeSymbols = true;
